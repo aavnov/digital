@@ -12,6 +12,8 @@ import android.widget.TextView;
 import com.example.licensecheck.Entity.Data;
 import com.example.licensecheck.R;
 
+import org.w3c.dom.Text;
+
 import java.util.List;
 
 public class RVAdapter extends RecyclerView.Adapter<RVAdapter.LicenseViewHolder> {
@@ -22,12 +24,23 @@ public class RVAdapter extends RecyclerView.Adapter<RVAdapter.LicenseViewHolder>
         TextView id;
         TextView email;
 
+        TextView name;
+        TextView inn;
+
+ /*       ogrn,
+        activity_type,
+        asddress,
+        date_register,
+        date_termination).get();*/
+
 
         LicenseViewHolder(View itemView) {
             super(itemView);
 
             id = (TextView)itemView.findViewById(R.id.id);
             email = (TextView)itemView.findViewById(R.id.email);
+            name = (TextView)itemView.findViewById(R.id.name);
+            inn = (TextView)itemView.findViewById(R.id.inn);
 
         }
     }
@@ -54,6 +67,8 @@ public class RVAdapter extends RecyclerView.Adapter<RVAdapter.LicenseViewHolder>
     public void onBindViewHolder(LicenseViewHolder personViewHolder, int i) {
         personViewHolder.id.setText(datas.get(i).id);
         personViewHolder.email.setText(datas.get(i).email);
+        personViewHolder.name.setText("datas.get(i).email");
+        personViewHolder.inn.setText("datas.get(i).email");
     }
 
     @Override
